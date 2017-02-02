@@ -1,0 +1,64 @@
+<project name="Example" default="deployOnly" basedir="." xmlns:sf="antlib:com.salesforce">
+<!-- Specify proxy if any -->
+<setproxy proxyhost="Specify_proxy" proxyport="8080"/>
+
+	<property file="build.properties"/>
+	
+	<target name="retrieveOnly" >
+		<mkdir dir="${sourceDir}"/>
+	    <sf:retrieve 
+			username="${sf.source.username}" 
+			password="${sf.source.password}"
+			serverurl="${sf.source.serverurl}"
+			retrievetarget="${sourceDir}"
+			maxPoll="100" 
+			unpackaged="package.xml"
+			pollWaitMillis="10000">	 
+		</sf:retrieve>
+    </target>
+	
+	<target name="validateOnly">
+		<sf:deploy 
+			username="${sf.target.username}" 
+			password="${sf.target.password}" 
+			serverurl="${sf.target.serverurl}"
+			deployRoot="${sourceDir}" 
+			checkOnly="true">
+		</sf:deploy>	
+	</target>
+	
+	<target name="validateWithRunTest">
+		<sf:deploy 
+			username="${sf.target.username}" 
+			password="${sf.target.password}" 
+			serverurl="${sf.target.serverurl}"
+			deployRoot="${sourceDir}" 
+			checkOnly="true"
+			testLevel="RunLocalTests">
+		</sf:deploy>	
+	</target>
+	
+	<target name="deployOnly">
+	    <sf:deploy 
+			username="${sf.target.username}" 
+			password="${sf.target.password}" 
+			serverurl="${sf.target.serverurl}"
+			deployRoot="${sourceDir}" 
+			maxPoll="100" 
+			pollWaitMillis="10000">	 
+		</sf:deploy>
+    </target>
+	
+	<target name="deployWithRunTest" >
+	    <sf:deploy 
+			username="${sf.target.username}" 
+			password="${sf.target.password}" 
+			serverurl="${sf.target.serverurl}"
+			deployRoot="${sourceDir}"
+			testLevel="RunLocalTests"			
+			maxPoll="100" 
+			pollWaitMillis="10000">	 
+		</sf:deploy>
+    </target>
+	
+</project>
