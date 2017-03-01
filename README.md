@@ -2,7 +2,7 @@
 ANT is a salesforce tool use to deploy components from one organization to another
 Steps to deploy using ANT:
 
-1. Create package.xml file and enter all the components which you need to retrieve.
+1. Create package.xml file and enter all the components which you need to retrieve. A sample package.xml can be found [here](https://github.com/MRohit/ANT-Deployment/blob/master/config/package.xml)
 2. Edit build.properties and specify source and target username, password and URL.
 3. Open command prompt where you want to retrieve files. Keep package.xml,build.properties and build.xml in same directory.
 4. Enter command "ant retrieveOnly" will retrieve all the components specified in package.xml from respective source.
