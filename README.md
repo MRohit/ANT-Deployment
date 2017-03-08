@@ -1,6 +1,6 @@
 # ANT-Deployment
 ANT is a salesforce tool use to deploy components from one organization to another
-Steps to deploy using ANT:
+Steps to do Deployment using ANT:
 
 1. Create package.xml file and enter all the components which you want to retrieve. A sample package.xml can be found [here](https://github.com/MRohit/ANT-Deployment/blob/master/config/package.xml)
 2. Edit [build.properties](https://github.com/MRohit/ANT-Deployment/blob/master/config/build.properties) and specify source and target username, password and URL.
