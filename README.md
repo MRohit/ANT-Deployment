@@ -7,4 +7,4 @@ Steps to do Deployment using ANT:
 3. Open command prompt where you've install ANT. You can specify source directory in build.xml where you want to retrieve files. Keep package.xml,build.properties and [build.xml](https://github.com/MRohit/ANT-Deployment/blob/master/config/build.xml) in same directory.
 4. Enter command "ant retrieveOnly" will retrieve all the components specified in package.xml from respective source.
 5. Enter command "ant validateOnly" will validate retrieved components on target org where we need to deploy.
-6. Once package is succefully validated with no errors, enter command "ant deployOnly". This will deploy all the components on target org.
+6. Once package is successfully validated with no errors, enter command "ant deployOnly". This will deploy all the components on target org.
